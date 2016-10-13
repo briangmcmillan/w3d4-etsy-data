@@ -1025,13 +1025,66 @@ var items = [{
   "used_manufacturer": false
 }];
 
-//Question #1: My first variable (total) was calculated by looking for the 'price' string within their var items. I used a funciton to take the first price and add to it the second, then take that value and return it to the top to add to the third and so on. Once I got the total price (total.price) I divided it by the amount of items to get the average.
+//Question #1:
+//What are you doing? Find the average price of all of the price items in the array.
+//How are you doing it? My first variable (total) was calculated by looking for the 'price' string within their var items. I used a funciton to take the first price and add to it the second, then take that value and return it to the top to add to the third and so on. Once I got the total price (total.price) I divided it by the amount of items to get the average.
+//Why are you doing it this way? This is what we learned in class.
 var total = items.reduce(function(previous, current){
     return {price: previous.price + current.price}
 }, {price: 0})
 
 var avgPrice = total.price / items.length
 
-//console.log(avgPrice)
+//console.log('The average price is' + ', ' + '$' + avgPrice.toFixed(2))
+
+
 
 //Question #2:
+//What are you doing? Trying to find out what items in the list have a price between $14 - $18.
+//How are you doing it? By creating a variable that looks the items list, filtering each item through a function that will return to me any item with a price between $14-$18.
+//Why are you doing it this way? Because this is the simplest way for me to understand what the function is doing.
+var question2 = items.filter(function(item) {
+    return item.price >=14 && item.price <=18
+})
+// console.log('Items that cost between $14.00 USD and $18.00 USD: ', question2)
+
+
+
+//Question #3:
+//What are you doing?
+//How are you doing it?
+//Why are you doing it this way?
+var question3 = items.filter(function(item){
+  return item.currency_code === 'GBP'
+})
+
+//console.log(question3[0].title + ' £' + question3[0].price)
+
+
+
+//Question #4:
+//What are you doing?
+//How are you doing it?
+//Why are you doing it this way?
+var question4 = items.filter(function(item){
+  return item.materials.includes("wood")
+})
+//console.log(question4[0].title + question4[1].title + question4[2].title + question4[3].title + question4[4].title)
+
+//Question #5:
+//What are you doing?
+//How are you doing it?
+//Why are you doing it this way?
+var question5 = items.filter(function(item){
+  return item.materials.length >7
+})
+//console.log(question5[0].title + question5[1].title)
+
+//Question #6:
+//What are you doing?
+//How are you doing it?
+//Why are you doing it this way?
+var question6 = items.filter(function(item){
+  return item.who_made.includes('i_did')
+})
+//console.log(question6.length + ' ' + 'were made by their sellers')
